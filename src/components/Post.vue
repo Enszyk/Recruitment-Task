@@ -7,7 +7,7 @@
   </div>
 </div> -->
 
-    <div class="post card">
+    <div class="post card border-primary">
         <div class="card-body">
             <post-content :post="post" :editMode="editMode" />
 
@@ -104,13 +104,13 @@ export default {
 <style lang="scss">
 .post {
     margin: 20px auto;
-    width: 40%;
+    width: 700px;
 
     &__buttons__container {
         margin: 0 auto;
-        width: 50%;
+        width: 70%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 }
 </style>

@@ -1,14 +1,16 @@
 <template>
-    <div class="comment">
-        <p>
-            {{comment.name}}
-        </p>
-        <p>
-            {{comment.email}}
-        </p>
-        <p>
-            {{comment.body}}
-        </p>
+    <div class="card border-dark">
+        <div class="card-body">
+            <h5 class="card-header">
+                Name: {{ comment.name }}
+            </h5>
+            <p class="card-body">
+                {{ comment.body }}
+            </p>
+            <p class="card-body">
+                {{ comment.email }}
+            </p>
+        </div>
     </div>
 </template>
 
@@ -20,7 +22,10 @@ export default {
 </script>
 
 <style>
-    .comment {
-        border: 2px solid black;
-    }
+.card {
+    margin-top: 10px;
+}
+.card-body, .card-header {
+    padding: 10px;
+}
 </style>
