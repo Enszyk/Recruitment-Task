@@ -43,7 +43,7 @@ export default {
 
 <style>
 .form-control {
-    height: 125px!important;
+    height: 130px!important;
 }
 .form-title {
     font-size: 2rem;

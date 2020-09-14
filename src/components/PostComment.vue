@@ -1,15 +1,11 @@
 <template>
     <div class="card border-dark">
         <div class="card-body">
-            <h5 class="card-header">
-                Name: {{ comment.name }}
-            </h5>
-            <p class="card-body">
-                {{ comment.body }}
-            </p>
-            <p class="card-body">
-                {{ comment.email }}
-            </p>
+            <h5 class="card-header">Name: {{ comment.name }}</h5>
+            <div class="card-body">
+                <p>{{ comment.body }}</p>
+                <p class="m-0">{{ comment.email }}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -24,8 +20,5 @@ export default {
 <style>
 .card {
     margin-top: 10px;
-}
-.card-body, .card-header {
-    padding: 10px;
 }
 </style>

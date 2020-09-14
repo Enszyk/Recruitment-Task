@@ -104,7 +104,7 @@ export default {
 <style lang="scss">
 .post {
     margin: 20px auto;
-    width: 700px;
+    width: 500px;
 
     &__buttons__container {
         margin: 0 auto;
