@@ -38,7 +38,11 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+* {
+    margin: 0;
+    padding: 0;
+}
 h3 {
     margin: 40px 0 0;
 }

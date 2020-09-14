@@ -9,6 +9,9 @@ export default new Vuex.Store({
         comments: [],
     },
     mutations: {
+        deletePost(state, payload) {
+            state.posts = state.posts.filter((value) => value !== payload)
+        },
     },
     actions: {
     }
