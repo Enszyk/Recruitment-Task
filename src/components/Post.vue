@@ -2,26 +2,28 @@
     <div class="post">
         <post-content :post="post" :editMode="editMode" />
 
-        <button @click="toggleShowComments" v-if="!showComments">
-            Show comments
-        </button>
+        <div class="post__buttons__container">
+            <button type="button" class="btn btn-primary btn-md" @click="toggleShowComments" v-if="!showComments">
+                Show comments
+            </button>
 
-        <button @click="toggleShowComments" v-else>
-            Hide comments
-        </button>
+            <button type="button" class="btn btn-primary btn-md" @click="toggleShowComments" v-else>
+                Hide comments
+            </button>
 
-        <button @click="deletePost()">
-            Delete post
-        </button>
+            <button type="button" class="btn btn-primary btn-md" @click="deletePost()">
+                Delete post
+            </button>
 
-        <button @click="editPost()" v-if="!editMode">
-            Edit post
-        </button>
+            <button type="button" class="btn btn-primary btn-md" @click="editPost()" v-if="!editMode">
+                Edit post
+            </button>
 
-        <button @click="savePost()" v-else>
-            save post
-        </button>
+            <button type="button" class="btn btn-primary btn-md" @click="savePost()" v-else>
+                save post
+            </button>
 
+        </div>
         <post-comment
             v-for="comment in comments"
             :key="comment.id"
@@ -55,8 +57,7 @@ export default {
         },
         savePost() {
             this.editMode = !this.editMode;
-
-        }
+        },
     },
     components: {
         PostContent,
@@ -65,9 +66,18 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .post {
     margin: 20px auto;
     width: 40%;
+
+    &__buttons__container {
+        margin: 0 auto;
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+    }
 }
+
+
 </style>

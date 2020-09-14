@@ -2,7 +2,11 @@
     <div>
         <template v-if="editMode">
             <div class="form-group">
-                <textarea type="text" class="title__input" v-model.lazy="post.title" />
+                <textarea
+                    type="text"
+                    class="form-control form-title"
+                    v-model.lazy="post.title"
+                />
             </div>
         </template>
 
@@ -14,13 +18,17 @@
 
         <template v-if="editMode">
             <div class="form-group">
-                <textarea type="text" class="title__body" v-model.lazy="post.body" />
+                <textarea
+                    type="text"
+                    class="form-control"
+                    v-model.lazy="post.body"
+                />
             </div>
         </template>
 
         <template v-else>
             <p>
-            {{ post.body }}
+                {{ post.body }}
             </p>
         </template>
     </div>
@@ -34,17 +42,10 @@ export default {
 </script>
 
 <style>
-
-textarea {
-    padding: 10px;
+.form-control {
+    height: 125px!important;
 }
-
-.title__input {
-    width: 100%;
-    height: 50px;
-}
-.title__body {
-    width: 100%;
-    height: 100px;
+.form-title {
+    font-size: 2rem;
 }
 </style>
