@@ -1,5 +1,6 @@
 <template>
     <div>
+        <transition name="fade" mode="out-in" appear>
         <template v-if="editMode">
             <div class="form-group">
                 <textarea
@@ -9,13 +10,15 @@
                 />
             </div>
         </template>
-
+        
         <template v-else>
             <h2 class="card-header">
                 {{ post.title }}
             </h2>
         </template>
+        </transition>
 
+        <transition name="fade" mode="out-in" appear>
         <template v-if="editMode">
             <div class="form-group">
                 <textarea
@@ -31,6 +34,7 @@
                 {{ post.body }}
             </p>
         </template>
+        </transition>
     </div>
 </template>
 
