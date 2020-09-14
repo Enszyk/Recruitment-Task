@@ -11,9 +11,9 @@
         </template>
 
         <template v-else>
-            <h1>
+            <h2 class="card-header">
                 {{ post.title }}
-            </h1>
+            </h2>
         </template>
 
         <template v-if="editMode">
@@ -27,7 +27,7 @@
         </template>
 
         <template v-else>
-            <p>
+            <p class="card-body">
                 {{ post.body }}
             </p>
         </template>
