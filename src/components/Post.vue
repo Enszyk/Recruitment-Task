@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <post-content :title="post.title" :body="post.body" />
+    <div class="post">
+        <post-content :post="post" :editMode="editMode" />
 
         <button @click="toggleShowComments" v-if="!showComments">
             Show comments
@@ -10,11 +10,24 @@
             Hide comments
         </button>
 
-        <button @click="deletePost()" >
+        <button @click="deletePost()">
             Delete post
         </button>
 
-        <post-comment v-for="comment in comments" :key="comment.id" v-show="showComments" :comment="comment" />
+        <button @click="editPost()" v-if="!editMode">
+            Edit post
+        </button>
+
+        <button @click="savePost()" v-else>
+            save post
+        </button>
+
+        <post-comment
+            v-for="comment in comments"
+            :key="comment.id"
+            v-show="showComments"
+            :comment="comment"
+        />
     </div>
 </template>
 
@@ -27,6 +40,7 @@ export default {
     data() {
         return {
             showComments: false,
+            editMode: false,
         };
     },
     methods: {
@@ -34,14 +48,26 @@ export default {
             this.showComments = !this.showComments;
         },
         deletePost() {
-            this.$store.commit("deletePost", this.post)
+            this.$store.commit("deletePost", this.post);
+        },
+        editPost() {
+            this.editMode = !this.editMode;
+        },
+        savePost() {
+            this.editMode = !this.editMode;
+
         }
     },
     components: {
         PostContent,
-        PostComment
-    }
+        PostComment,
+    },
 };
 </script>
 
-<style></style>
+<style>
+.post {
+    margin: 20px auto;
+    width: 40%;
+}
+</style>
