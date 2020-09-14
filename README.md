@@ -1,5 +1,8 @@
 # recruitment-task
 
+## Live Version
+https://enszyk.github.io/Recruitment-Task/live/
+
 ### Cel zadania: 
 Twoim zadaniem jest stworzenie krótkiej aplikacji we Vue.js która pobiera dane i odpowiednio je wyświetla. Następnie dane te można w odpowiedni sposób przetwarzać i komunikować się z Back-endem.  
 
