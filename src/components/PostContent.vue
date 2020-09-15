@@ -1,39 +1,31 @@
 <template>
     <div>
         <transition name="fade" mode="out-in" appear>
-        <template v-if="editMode">
-            <div class="form-group">
+            <div class="form-group" v-if="editMode">
                 <textarea
                     type="text"
                     class="form-control form-title"
                     v-model.lazy="post.title"
                 />
             </div>
-        </template>
-        
-        <template v-else>
-            <h2 class="card-header">
+
+            <h2 class="card-header" v-else>
                 {{ post.title }}
             </h2>
-        </template>
         </transition>
 
         <transition name="fade" mode="out-in" appear>
-        <template v-if="editMode">
-            <div class="form-group">
+            <div class="form-group" v-if="editMode">
                 <textarea
                     type="text"
                     class="form-control"
                     v-model.lazy="post.body"
                 />
             </div>
-        </template>
-
-        <template v-else>
-            <p class="card-body">
+            
+            <p class="card-body" v-else>
                 {{ post.body }}
             </p>
-        </template>
         </transition>
     </div>
 </template>
@@ -47,7 +39,7 @@ export default {
 
 <style>
 .form-control {
-    height: 130px!important;
+    height: 130px !important;
 }
 .form-title {
     font-size: 2rem;

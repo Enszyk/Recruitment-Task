@@ -86,7 +86,7 @@ export default {
             this.editMode = !this.editMode;
         },
         savePost() {
-            this.editMode = !this.editMode;
+            this.editPost()
             this.$store.commit("updatePost", [
                 this.post.id,
                 this.post.title,
@@ -116,7 +116,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
 }
 
 .fade-enter,
@@ -124,10 +124,12 @@ export default {
     opacity: 0;
 }
 
-.list-enter-active, .list-leave-active {
-  transition: all 1s ease-in-out;
+.list-enter-active, 
+.list-leave-active {
+  transition: all 0.7s ease-in-out;
 }
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+.list-enter, 
+.list-leave-to {
   opacity: 0;
   transform: translateY(30px);
 }
